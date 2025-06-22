@@ -1,3 +1,7 @@
+/* Font Brodi */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* CSS Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -5,95 +9,141 @@
 }
 
 body {
-  font-family: 'Helvetica Neue', sans-serif;
-  background: linear-gradient(100deg, #6e5d50 50%, #d7bca6 50%);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(105deg, #070E15 70%, #0D1B2A 30%);
   color: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  line-height: 1.6;
 }
 
+/* Navigation Styles */
 nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 3rem;
+  justify-content: space-between;
+  padding: 1.5rem 5%;
+  position: relative;
 }
 
-nav ul {
+.nav-left {
   display: flex;
+  align-items: center;
   gap: 2rem;
-  list-style: none;
+  flex: 1;
 }
 
-nav ul li {
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  font-family: poppins;
+}
+
+.nav-menu li {
   font-size: 1rem;
   cursor: pointer;
-  transition: opacity 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-nav ul li:hover {
+.nav-menu li:hover {
   opacity: 0.7;
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   font-family: 'Times New Roman', Times, serif;
-  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
+.logo-img {
+    padding-left: 150px;
+    padding-top: 6px;
 
-.title {
-    font-family: 'Times New Roman', Times, serif;
 }
 
 .avatar-icon {
   width: 28px;
   height: 28px;
   filter: brightness(100);
+  transition: transform 0.3s ease;
 }
 
+.avatar-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Main Content Styles */
 .main {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 3rem;
+  padding: 0 5%;
+  position: relative;
+  overflow: hidden;
 }
 
 .text-section {
   flex: 1;
   max-width: 600px;
+  animation: fadeIn 1s ease-in-out;
 }
 
-.text-section h1 {
+.title {
   font-size: 4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.1;
 }
 
 .text-section p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.8;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   color: #f0f0f0;
+  max-width: 90%;
 }
 
-.discover {
-  font-size: 1rem;
-  font-weight: bold;
+.discover-btn {
   display: inline-flex;
   align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  text-transform: uppercase;
 }
 
-.discover::before {
-  content: '◂';
-  margin-right: 0.5rem;
-}
-
-.discover:hover {
-  color: #ddd;
+.discover-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
 }
 
 .image-section {
@@ -101,26 +151,72 @@ nav ul li:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: float 6s ease-in-out infinite;
 }
 
 .image-section img {
-  max-width: 90%;
-  height: auto;
+  max-width: 100%;
+  height: 650px;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .title {
+    font-size: 3.5rem;
+  }
 }
 
 @media (max-width: 768px) {
+  nav {
+    padding: 1rem 5%;
+  }
+
+  .nav-menu {
+    gap: 1.5rem;
+  }
+
   .main {
     flex-direction: column;
-    padding: 2rem;
+    padding: 3rem 5% 0;
   }
 
-  .text-section,
+  .text-section {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .text-section p {
+    max-width: 100%;
+  }
+
   .image-section {
     width: 100%;
-    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 2.5rem;
   }
 
-  .text-section h1 {
-    font-size: 3rem;
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-menu {
+    gap: 1rem;
   }
 }
