@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LNV - X</title>
+    <style>
+        /* CSS Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(100deg, #6e5d50 50%, #d7bca6 50%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 5%;
+            position: relative;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex: 1;
+        }
+
+        .nav-center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 1;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu li {
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-menu li:hover {
+            opacity: 0.7;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .avatar-icon {
+            width: 28px;
+            height: 28px;
+            filter: brightness(100);
+            transition: transform 0.3s ease;
+        }
+
+        .avatar-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Main Content Styles */
+        .main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .text-section {
+            flex: 1;
+            max-width: 600px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .title {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 400;
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        .text-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            color: #f0f0f0;
+            max-width: 90%;
+        }
+
+        .discover-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0.75rem 1.5rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            text-transform: uppercase;
+        }
+
+        .discover-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
+        }
+
+        .image-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .title {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5%;
+            }
+
+            .nav-menu {
+                gap: 1.5rem;
+            }
+
+            .main {
+                flex-direction: column;
+                padding: 3rem 5% 0;
+            }
+
+            .text-section {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+
+            .text-section p {
+                max-width: 100%;
+            }
+
+            .image-section {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .nav-menu {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <ul class="nav-menu">
+                <li>Home</li>
+                <li>About</li>
+            </ul>
+        </div>
+        <div class="logo">LNV - X</div>
+        <div class="nav-right">
+            <ul class="nav-menu">
+                <li>Contact</li>
+                <img src="/assets/DEMO 3D.svg" alt="avatar" class="avatar-icon">
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="text-section">
+            <h1 class="title">LNV - X</h1>
+            <p>
+                LNV - X is not about telling time—it's about marking the moment where boldness meets calm. It's crafted not to stand out in a crowd, but to be quietly recognized by those who understand value beyond price. It's not a symbol of status, but a statement of character—a watch that doesn't seek to impress, only to reflect who you truly are.
+            </p>
+            <div class="discover-btn">
+                <span>Discover More</span>
+                <span>&rarr;</span>
+            </div>
+        </div>
+        <div class="image-section">
+            <img src="/assets/DEMO 3D.svg" alt="watch design">
+        </div>
+    </div>
+</body>
+</html>
