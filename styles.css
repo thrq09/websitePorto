@@ -11,6 +11,7 @@
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background: linear-gradient(105deg, #070E15 70%, #0D1B2A 30%);
+  background-size: cover;
   color: #fff;
   min-height: 100vh;
   display: flex;
@@ -100,6 +101,21 @@ nav {
   padding: 0 5%;
   position: relative;
   overflow: hidden;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/DEMO\ 3D\ \(1\).svg'); /* ganti path sesuai gambarmu */
+  background-repeat: no-repeat;
+  background-position: 0cap;
+  background-size: 1500px auto; /* diperkecil */
+  opacity: 0.1; /* 10% opacity */
+  z-index: -1;
 }
 
 .text-section {
