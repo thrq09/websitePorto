@@ -106,16 +106,19 @@ nav {
 .main::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 100px;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/assets/DEMO\ 3D\ \(1\).svg'); /* ganti path sesuai gambarmu */
+  background-image: url('/assets/bg.svg'); /* ganti path sesuai gambarmu */
   background-repeat: no-repeat;
   background-position: 0cap;
-  background-size: 1500px auto; /* diperkecil */
+  background-size: 1900px auto; /* diperkecil */
   opacity: 0.1; /* 10% opacity */
   z-index: -1;
+  animation: rotateBg 20s linear infinite;
+  transform-origin: center;
+  animation: rotateBg 20s linear infinite;
 }
 
 .text-section {
@@ -186,6 +189,11 @@ nav {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
   100% { transform: translateY(0px); }
+}
+
+@keyframes rotateBg {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 /* Responsive Styles */
