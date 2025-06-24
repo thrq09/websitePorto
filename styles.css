@@ -10,7 +10,7 @@
 
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  background: linear-gradient(105deg, #070E15 70%, #0D1B2A 30%);
+  background: linear-gradient(110deg, #070E15 65%, #0D1B2A 35%);
   background-size: cover;
   color: #fff;
   min-height: 100vh;
@@ -176,6 +176,34 @@ nav {
   max-width: 100%;
   height: 650px;
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+.nav-menu li a {
+  color: inherit;              /* mewarisi warna dari parent */
+  font-family: inherit;        /* mewarisi font dari parent */
+  text-decoration: none;       /* hilangkan underline */
+}
+
+.nav-menu li a:visited,
+.nav-menu li a:focus,
+.nav-menu li a:active {
+  color: inherit;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.discover-btn {
+  color: inherit;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+.discover-btn:visited,
+.discover-btn:focus,
+.discover-btn:active {
+  color: inherit;
+  font-family: inherit;
+  text-decoration: none;
 }
 
 @keyframes rotateBg {
